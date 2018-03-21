@@ -31,17 +31,15 @@ public class SpawnGameObjects : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Time.time - savedTime >= secondsBetweenSpawning) // is it time to spawn again?
-		{
+		if ( (Time.time - savedTime >= secondsBetweenSpawning) && (GameObject.FindGameObjectWithTag("MagicHoop")==false)) { // is it time to spawn again?
 			MakeThingToSpawn();
 			savedTime = Time.time; // store for next spawn
 			secondsBetweenSpawning = Random.Range (minSecondsBetweenSpawning, maxSecondsBetweenSpawning);
 		}	
 	}
 
-	void MakeThingToSpawn()
-	{
-        if (gameManager.gameStarted){
+	void MakeThingToSpawn() {
+        if (gameManager.gameStarted) {
             // create spawn position
             Vector3 spawnPos = new Vector3(	Random.Range(transform.position.x - deltaX, transform.position.x + deltaX),
 											Random.Range(transform.position.x - deltaY, transform.position.x + deltaY),
