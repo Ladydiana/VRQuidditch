@@ -1672,7 +1672,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1293081970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 177, y: 600, z: 0}
+  m_LocalPosition: {x: 177, y: 500, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1695,7 +1695,7 @@ MonoBehaviour:
   minSecondsBetweenSpawning: 3
   maxSecondsBetweenSpawning: 6
   deltaX: 500
-  deltaY: 1000
+  deltaY: 400
   deltaZ: 100
 --- !u!1 &1410515058
 GameObject:

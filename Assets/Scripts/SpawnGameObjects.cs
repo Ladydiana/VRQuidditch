@@ -8,10 +8,12 @@ using System.Collections;
  * Location: Random location between (x +- deltaX, y +- deltaY, z +- deltaZ )
  */
 
+
 public class SpawnGameObjects : MonoBehaviour {
 
 	public GameObject spawnPrefab;
     public GameManager gameManager;
+
 
 	public float minSecondsBetweenSpawning = 3.0f;
 	public float maxSecondsBetweenSpawning = 6.0f;
