@@ -25,8 +25,12 @@ public class Autofly : MonoBehaviour {
 
 		if (Physics.Raycast (ray, out hit)) {
 			if (hit.collider.tag.Contains ("ArenaDelimiter")) { 
-				if (hit.distance <=5) {
-					flying = false;
+				if (hit.distance <=10) {
+					Debug.Log ("Hit");
+					//gameObject.GetComponent<Rigidbody> ().velocity = Vector3.Reflect (gameObject.GetComponent<Rigidbody> ().velocity, hit.collider.gameObject.GetComponent<MeshFilter> ().mesh.normals[0]);
+					//Rigidbody.AddForce(otherBall.Rigid_Body.velocity);
+					//flying = false;
+					gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
 				}
 			} else {
 				flying = true;
