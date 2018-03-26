@@ -18,6 +18,7 @@ public class Autofly : MonoBehaviour {
 		if (flying) {
 			//transform.position = transform.position + Camera.main.transform.forward * speed * Time.deltaTime;
 			transform.Translate (Camera.main.transform.forward * speed * Time.deltaTime);
+			//transform.Translate(Camera.main.transform.forward * Time.deltaTime * speed, Space.World);
 		}
 
 		Ray ray = Camera.main.ViewportPointToRay (new Vector3 (.5f, .5f, 0));
@@ -29,8 +30,8 @@ public class Autofly : MonoBehaviour {
 					Debug.Log ("Hit");
 					//gameObject.GetComponent<Rigidbody> ().velocity = Vector3.Reflect (gameObject.GetComponent<Rigidbody> ().velocity, hit.collider.gameObject.GetComponent<MeshFilter> ().mesh.normals[0]);
 					//Rigidbody.AddForce(otherBall.Rigid_Body.velocity);
-					//flying = false;
-					gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+					flying = false;
+					//gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
 				}
 			} else {
 				flying = true;
