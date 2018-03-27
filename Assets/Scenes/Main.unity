@@ -744,7 +744,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 498412, guid: 970dd4b9371394fb4890965f608d46fd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 380
+      value: 411
       objectReference: {fileID: 0}
     - target: {fileID: 498412, guid: 970dd4b9371394fb4890965f608d46fd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2047,8 +2047,8 @@ MonoBehaviour:
   gameManager: {fileID: 1057782226}
   minSecondsBetweenSpawning: 3
   maxSecondsBetweenSpawning: 6
-  deltaX: 150
-  deltaY: 400
+  deltaX: 200
+  deltaY: 300
   deltaZ: 100
 --- !u!1 &1750570176
 GameObject:
