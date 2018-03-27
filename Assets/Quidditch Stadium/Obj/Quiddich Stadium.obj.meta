@@ -481,6 +481,85 @@ ModelImporter:
     4300152: Null_DrawCall_0201_1
     4300154: Null_DrawCall_0202
     4300156: Null_DrawCall_0202_1
+    6400000: Null_DrawCall_0004
+    6400002: Null_DrawCall_0005
+    6400004: Null_DrawCall_0006
+    6400006: Null_DrawCall_0007
+    6400008: Null_DrawCall_0008
+    6400010: Null_DrawCall_0009
+    6400012: Null_DrawCall_0010
+    6400014: Null_DrawCall_0011
+    6400016: Null_DrawCall_0012
+    6400018: Null_DrawCall_0013
+    6400020: Null_DrawCall_0014
+    6400022: Null_DrawCall_0015
+    6400024: Null_DrawCall_0016
+    6400026: Null_DrawCall_0017
+    6400028: Null_DrawCall_0018
+    6400030: Null_DrawCall_0019
+    6400032: Null_DrawCall_0020
+    6400034: Null_DrawCall_0021
+    6400036: Null_DrawCall_0022
+    6400038: Null_DrawCall_0023
+    6400040: Null_DrawCall_0024
+    6400042: Null_DrawCall_0025
+    6400044: Null_DrawCall_0026
+    6400046: Null_DrawCall_0027
+    6400048: Null_DrawCall_0028
+    6400050: Null_DrawCall_0029
+    6400052: Null_DrawCall_0030
+    6400054: Null_DrawCall_0031
+    6400056: Null_DrawCall_0032
+    6400058: Null_DrawCall_0033
+    6400060: Null_DrawCall_0034
+    6400062: Null_DrawCall_0035
+    6400064: Null_DrawCall_0036
+    6400066: Null_DrawCall_0037
+    6400068: Null_DrawCall_0038
+    6400070: Null_DrawCall_0039
+    6400072: Null_DrawCall_0047
+    6400074: Null_DrawCall_0048
+    6400076: Null_DrawCall_0049
+    6400078: Null_DrawCall_0050
+    6400080: Null_DrawCall_0051
+    6400082: Null_DrawCall_0052
+    6400084: Null_DrawCall_0053
+    6400086: Null_DrawCall_0055
+    6400088: Null_DrawCall_0057
+    6400090: Null_DrawCall_0058
+    6400092: Null_DrawCall_0059
+    6400094: Null_DrawCall_0060
+    6400096: Null_DrawCall_0061
+    6400098: Null_DrawCall_0062
+    6400100: Null_DrawCall_0063
+    6400102: Null_DrawCall_0064
+    6400104: Null_DrawCall_0078
+    6400106: Null_DrawCall_0087
+    6400108: Null_DrawCall_0088
+    6400110: Null_DrawCall_0089
+    6400112: Null_DrawCall_0090
+    6400114: Null_DrawCall_0091
+    6400116: Null_DrawCall_0092
+    6400118: Null_DrawCall_0093
+    6400120: Null_DrawCall_0094
+    6400122: Null_DrawCall_0095
+    6400124: Null_DrawCall_0096
+    6400126: Null_DrawCall_0097
+    6400128: Null_DrawCall_0098
+    6400130: Null_DrawCall_0116
+    6400132: Null_DrawCall_0117
+    6400134: Null_DrawCall_0117_1
+    6400136: Null_DrawCall_0118
+    6400138: Null_DrawCall_0119
+    6400140: Null_DrawCall_0188
+    6400142: Null_DrawCall_0189
+    6400144: Null_DrawCall_0199
+    6400146: Null_DrawCall_0200
+    6400148: Null_DrawCall_0200_1
+    6400150: Null_DrawCall_0201
+    6400152: Null_DrawCall_0201_1
+    6400154: Null_DrawCall_0202
+    6400156: Null_DrawCall_0202_1
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -512,7 +591,7 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 2
     addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
