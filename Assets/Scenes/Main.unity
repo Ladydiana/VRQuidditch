@@ -2047,7 +2047,7 @@ MonoBehaviour:
   gameManager: {fileID: 1057782226}
   minSecondsBetweenSpawning: 3
   maxSecondsBetweenSpawning: 6
-  deltaX: 200
+  deltaX: 150
   deltaY: 400
   deltaZ: 100
 --- !u!1 &1750570176
