@@ -22,22 +22,23 @@ public class SpawnGameObjects : MonoBehaviour {
 	public float deltaY = 0;
 	public float deltaZ = 0;
 	
-	private float savedTime;
-	private float secondsBetweenSpawning;
+//	private float savedTime;
+//	private float secondsBetweenSpawning;
 
 	// Use this for initialization
 	void Start () {
-		savedTime = 0;
-        secondsBetweenSpawning = 0;
+//		savedTime = 0;
+//        secondsBetweenSpawning = 0;
     }
 	
 	// Update is called once per frame
 	void Update () {
 		if (gameManager.gameMode == GameMode.Hoop || gameManager.gameMode == GameMode.Simple) {
-			if ((Time.time - savedTime >= secondsBetweenSpawning) && (GameObject.FindGameObjectWithTag ("MagicHoop") == false)) { // is it time to spawn again?
+			//if ((Time.time - savedTime >= secondsBetweenSpawning) && (GameObject.FindGameObjectWithTag ("MagicHoop") == false)) { // is it time to spawn again?
+			if (GameObject.FindGameObjectWithTag ("MagicHoop") == false) {
 				MakeThingToSpawn ();
-				savedTime = Time.time; // store for next spawn
-				secondsBetweenSpawning = Random.Range (minSecondsBetweenSpawning, maxSecondsBetweenSpawning);
+				//savedTime = Time.time; // store for next spawn
+				//secondsBetweenSpawning = Random.Range (minSecondsBetweenSpawning, maxSecondsBetweenSpawning);
 			}	
 		}
 	}
@@ -52,6 +53,5 @@ public class SpawnGameObjects : MonoBehaviour {
             // create a new gameObject
             GameObject clone = Instantiate(spawnPrefab, spawnPos, transform.rotation) as GameObject;
         }
-
     }
 }
