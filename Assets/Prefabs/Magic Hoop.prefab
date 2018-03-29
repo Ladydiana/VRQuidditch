@@ -71,6 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 1
+  destroyAudioSource: {fileID: 8300000, guid: ad58540d08cb798458a1083fb602656d, type: 3}
 --- !u!135 &135814197913897718
 SphereCollider:
   m_ObjectHideFlags: 1

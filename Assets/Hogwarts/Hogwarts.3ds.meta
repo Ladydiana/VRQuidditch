@@ -1,0 +1,192 @@
+fileFormatVersion: 2
+guid: 04a84293835f6524cb8dfdc4a9779ea5
+timeCreated: 1522329058
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Hogwa
+    100002: Hogwa1
+    100004: Hogwa2
+    100006: Hogwa3
+    100008: Hogwa4
+    100010: Hogwa5
+    100012: Hogwa6
+    100014: Hogwa7
+    100016: Hogwa8
+    100018: //RootNode
+    100020: Hogwarts
+    100022: TooBig0
+    100024: TooBig1
+    100026: TooBig2
+    100028: TooBig3
+    100030: TooBig4
+    100032: TooBig5
+    100034: TooBig6
+    100036: TooBig7
+    400000: Hogwa
+    400002: Hogwa1
+    400004: Hogwa2
+    400006: Hogwa3
+    400008: Hogwa4
+    400010: Hogwa5
+    400012: Hogwa6
+    400014: Hogwa7
+    400016: Hogwa8
+    400018: Hogwarts
+    400020: //RootNode
+    400022: TooBig0
+    400024: TooBig1
+    400026: TooBig2
+    400028: TooBig3
+    400030: TooBig4
+    400032: TooBig5
+    400034: TooBig6
+    400036: TooBig7
+    2100000: Stone QuartYard
+    2100002: Short Tower
+    2100004: Green House
+    2100006: Dark
+    2100008: Chimney
+    2100010: Building Archwa
+    2100012: Bridge Archs
+    2100014: Back Buildings
+    2100016: B1 Tower Roof1
+    2100018: Astro Roof Back
+    2300000: Hogwa
+    2300002: Hogwa1
+    2300004: Hogwa2
+    2300006: Hogwa3
+    2300008: Hogwa4
+    2300010: Hogwa5
+    2300012: Hogwa6
+    2300014: Hogwa7
+    2300016: Hogwa8
+    2300018: Hogwarts
+    2300020: //RootNode
+    2300022: TooBig0
+    2300024: TooBig1
+    2300026: TooBig2
+    2300028: TooBig3
+    2300030: TooBig4
+    2300032: TooBig5
+    2300034: TooBig6
+    2300036: TooBig7
+    3300000: Hogwa
+    3300002: Hogwa1
+    3300004: Hogwa2
+    3300006: Hogwa3
+    3300008: Hogwa4
+    3300010: Hogwa5
+    3300012: Hogwa6
+    3300014: Hogwa7
+    3300016: Hogwa8
+    3300018: Hogwarts
+    3300020: //RootNode
+    3300022: TooBig0
+    3300024: TooBig1
+    3300026: TooBig2
+    3300028: TooBig3
+    3300030: TooBig4
+    3300032: TooBig5
+    3300034: TooBig6
+    3300036: TooBig7
+    4300000: Hogwa9
+    4300002: Hogwarts
+    4300004: Hogwa
+    4300006: Hogwa1
+    4300008: Hogwa2
+    4300010: Hogwa3
+    4300012: TooBig0
+    4300014: Hogwa4
+    4300016: Hogwa5
+    4300018: Hogwa6
+    4300020: TooBig1
+    4300022: TooBig2
+    4300024: TooBig3
+    4300026: TooBig4
+    4300028: Hogwa7
+    4300030: Hogwa8
+    4300032: TooBig5
+    4300034: TooBig6
+    4300036: TooBig7
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
