@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ArenaDelimiter
   - MagicHoop
+  - GameManager
   layers:
   - Default
   - TransparentFX
