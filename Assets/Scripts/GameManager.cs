@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GameMode {Hoop, Snitch, Simple};
+public enum GameMode {Hoop, Snitch, FreeRoam};
 
 public class GameManager : MonoBehaviour {
 

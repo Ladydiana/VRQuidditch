@@ -33,7 +33,7 @@ public class SpawnGameObjects : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (gameManager.gameMode == GameMode.Hoop || gameManager.gameMode == GameMode.Simple) {
+		if (gameManager.gameMode == GameMode.Hoop || gameManager.gameMode == GameMode.FreeRoam) {
 			//if ((Time.time - savedTime >= secondsBetweenSpawning) && (GameObject.FindGameObjectWithTag ("MagicHoop") == false)) { // is it time to spawn again?
 			if (GameObject.FindGameObjectWithTag ("MagicHoop") == false) {
 				MakeThingToSpawn ();
