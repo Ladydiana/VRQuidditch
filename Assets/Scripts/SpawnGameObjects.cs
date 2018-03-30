@@ -47,7 +47,7 @@ public class SpawnGameObjects : MonoBehaviour {
         if (gameManager.gameStarted) {
             // create spawn position
             Vector3 spawnPos = new Vector3(	Random.Range(transform.position.x - deltaX, transform.position.x + deltaX),
-											Random.Range(transform.position.x - deltaY, transform.position.x + deltaY),
+											Random.Range(transform.position.y - deltaY, transform.position.y + deltaY),
                         					Random.Range(transform.position.z - deltaZ, transform.position.z + deltaZ)
                         				  );
             // create a new gameObject
