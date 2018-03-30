@@ -7,7 +7,7 @@ public enum GameMode {Hoop, Snitch, FreeRoam};
 public class GameManager : MonoBehaviour {
 
 	public bool gameStarted = false;
-	public GameMode gameMode;
+	public GameMode gameMode = GameMode.FreeRoam;
 
 	// Use this for initialization
 	void Start () {

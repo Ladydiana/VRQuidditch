@@ -11,14 +11,29 @@ public class Autofly : MonoBehaviour {
 
 	public float speed = 50.0f;
 	public bool flying = true;
+	private GameManager gameManager;
+	private GameObject[] hoops;
 
+
+	void Start () {
+		gameManager = GameObject.FindGameObjectWithTag ("GameManager").GetComponent<GameManager>();
+	}
 
 	// Update is called once per frame
 	void Update () {
-		if (flying) {
+		if (flying && (gameManager.gameMode == GameMode.FreeRoam ||
+		    gameManager.gameMode == GameMode.Snitch)) {
 			//transform.position = transform.position + Camera.main.transform.forward * speed * Time.deltaTime;
 			transform.Translate (Camera.main.transform.forward * speed * Time.deltaTime);
 			//transform.Translate(Camera.main.transform.forward * Time.deltaTime * speed, Space.World);
+		} 
+		else if (flying && (gameManager.gameMode == GameMode.Hoop)) {
+			hoops = GameObject.FindGameObjectsWithTag ("MagicHoop");
+
+			if (hoops.Length > 0) {
+				transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(hoops[0].transform.position - transform.position), speed*Time.deltaTime);
+				transform.position = Vector3.MoveTowards (transform.position, hoops[0].transform.position, speed * Time.deltaTime);
+			}
 		}
 
 		Ray ray = Camera.main.ViewportPointToRay (new Vector3 (.5f, .5f, 0));
