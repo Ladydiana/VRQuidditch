@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class flyingSnitch : MonoBehaviour {
 
+	public GameObject[] checkpointPoints;
+
 	// Use this for initialization
 	void Start () {
 		

@@ -9140,6 +9140,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58e6063994ed7d41b2969f250d3b448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpointPoints:
+  - {fileID: 369043762}
+  - {fileID: 1053261715}
+  - {fileID: 347194228}
+  - {fileID: 665760177}
+  - {fileID: 1434475572}
+  - {fileID: 1572796923}
+  - {fileID: 1120517283}
+  - {fileID: 1324093923}
+  - {fileID: 1452061727}
+  - {fileID: 256893594}
+  - {fileID: 777616252}
+  - {fileID: 1386048075}
 --- !u!1001 &434452408
 Prefab:
   m_ObjectHideFlags: 0
