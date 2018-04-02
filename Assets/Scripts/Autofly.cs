@@ -13,6 +13,7 @@ public class Autofly : MonoBehaviour {
 	public bool flying = true;
 	private GameManager gameManager;
 	private GameObject[] hoops;
+	private bool looksAtHoop = false;
 
 
 	void Start () {
@@ -42,9 +43,9 @@ public class Autofly : MonoBehaviour {
 
 			//move towards the next hoop if it exists
 			if (hoops.Length > 0) {
-				if (!(Quaternion.LookRotation (hoops [0].transform.position - transform.position).eulerAngles.Equals (Vector3.zero))) {
+				if (!(Quaternion.LookRotation (hoops [0].transform.position - transform.position).eulerAngles.Equals (Vector3.zero)) && !looksAtHoop) {
 				//if (Vector3.Dot ((transform.position - hoops [0].transform.position).normalized, transform.forward) < 0.9) {
-					transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (hoops [0].transform.position - transform.position), Time.deltaTime);
+					transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (hoops [0].transform.position - transform.position), Time.deltaTime * 4);
 					//transform.Translate (Camera.main.transform.forward * speed * Time.deltaTime);
 				} 
 			} 
@@ -58,8 +59,10 @@ public class Autofly : MonoBehaviour {
 
 
 		if (Physics.Raycast (ray, out hit)) {
+			looksAtHoop = false;
+
 			// Collisions
-			if (hit.collider.tag.Contains ("ArenaDelimiter")) { 
+			if (hit.collider.tag.Contains ("ArenaDelimiter") && (gameManager.gameMode != GameMode.Hoop)) { 
 				if (hit.distance <= 16) {
 					Debug.Log ("Hit");
 					//gameObject.GetComponent<Rigidbody> ().velocity = Vector3.Reflect (gameObject.GetComponent<Rigidbody> ().velocity, hit.collider.gameObject.GetComponent<MeshFilter> ().mesh.normals[0]);
@@ -73,6 +76,7 @@ public class Autofly : MonoBehaviour {
 				}
 			} 
 			else if (hit.collider.tag.Contains ("MagicHoop") && (gameManager.gameMode == GameMode.Hoop)) {
+				looksAtHoop = true;
 				transform.position = Vector3.MoveTowards (transform.position, hoops [0].transform.position, speed * Time.deltaTime);
 			}
 			else {

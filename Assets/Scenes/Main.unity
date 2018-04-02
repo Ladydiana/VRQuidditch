@@ -2916,7 +2916,7 @@ MonoBehaviour:
   raycasterEventMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  maxRaycastHits: 64
+  maxRaycastHits: 154
 --- !u!4 &154654051 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 2ca74d65c2d242d4d8024573fe162437, type: 3}
@@ -24886,17 +24886,6 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 177758, guid: 970dd4b9371394fb4890965f608d46fd, type: 2}
   m_PrefabInternal: {fileID: 550902048}
---- !u!114 &1236567859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1236567858}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da9655c181036c24f924d3d2ad88967d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &1236567860
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24927,7 +24916,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 5c0a03d2bf267a8408528202bfba1aa5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
