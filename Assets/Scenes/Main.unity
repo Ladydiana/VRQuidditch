@@ -20804,7 +20804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStarted: 0
-  gameMode: 0
+  gameMode: 2
 --- !u!4 &1060227608 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 5d426569ba40dd84b8ee9e105e49172d, type: 3}
@@ -24945,19 +24945,19 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 1
+        value: 0.7000027
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
-        time: 0.4827512
-        value: 0.84313583
+        time: 0.49269992
+        value: 0.56313705
         inSlope: -1.29589
         outSlope: -1.29589
         tangentMode: 0
       - serializedVersion: 2
-        time: 0.9753723
-        value: 0.1764713
+        time: 1
+        value: 0.3564716
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -24967,7 +24967,7 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 0.99158216, g: 1, b: 0.3897059, a: 1}
-      key1: {r: 1, g: 0, b: 0, a: 1}
+      key1: {r: 1, g: 0, b: 0, a: 0.5411765}
       key2: {r: 1, g: 0, b: 0, a: 0}
       key3: {r: 1, g: 0, b: 0.8068962, a: 0}
       key4: {r: 1, g: 0, b: 0.8068962, a: 0}
