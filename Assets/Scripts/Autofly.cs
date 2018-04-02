@@ -30,9 +30,14 @@ public class Autofly : MonoBehaviour {
 		else if (flying && (gameManager.gameMode == GameMode.Hoop)) {
 			hoops = GameObject.FindGameObjectsWithTag ("MagicHoop");
 
+			//move towards the next hoop if it exists
 			if (hoops.Length > 0) {
-				transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(hoops[0].transform.position - transform.position), speed*Time.deltaTime);
-				transform.position = Vector3.MoveTowards (transform.position, hoops[0].transform.position, speed * Time.deltaTime);
+				transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (hoops [0].transform.position - transform.position), speed * Time.deltaTime);
+				transform.position = Vector3.MoveTowards (transform.position, hoops [0].transform.position, speed * Time.deltaTime);
+			} 
+			//else move forward
+			else {
+				transform.Translate (Camera.main.transform.forward * speed * Time.deltaTime);
 			}
 		}
 
