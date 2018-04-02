@@ -21,19 +21,32 @@ public class Autofly : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
+		Ray ray = Camera.main.ViewportPointToRay (new Vector3 (.5f, .5f, 0));
+		RaycastHit hit;
+
+
+		/*
+		 * 	FREEROAM MODE
+		 */
 		if (flying && (gameManager.gameMode == GameMode.FreeRoam ||
 		    gameManager.gameMode == GameMode.Snitch)) {
-			//transform.position = transform.position + Camera.main.transform.forward * speed * Time.deltaTime;
 			transform.Translate (Camera.main.transform.forward * speed * Time.deltaTime);
-			//transform.Translate(Camera.main.transform.forward * Time.deltaTime * speed, Space.World);
 		} 
+
+		/*
+		 * HOOP MODE
+		 */
 		else if (flying && (gameManager.gameMode == GameMode.Hoop)) {
 			hoops = GameObject.FindGameObjectsWithTag ("MagicHoop");
 
 			//move towards the next hoop if it exists
 			if (hoops.Length > 0) {
-				transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (hoops [0].transform.position - transform.position), speed * Time.deltaTime);
-				transform.position = Vector3.MoveTowards (transform.position, hoops [0].transform.position, speed * Time.deltaTime);
+				if (!(Quaternion.LookRotation (hoops [0].transform.position - transform.position).eulerAngles.Equals (Vector3.zero))) {
+				//if (Vector3.Dot ((transform.position - hoops [0].transform.position).normalized, transform.forward) < 0.9) {
+					transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (hoops [0].transform.position - transform.position), Time.deltaTime);
+					//transform.Translate (Camera.main.transform.forward * speed * Time.deltaTime);
+				} 
 			} 
 			//else move forward
 			else {
@@ -41,11 +54,11 @@ public class Autofly : MonoBehaviour {
 			}
 		}
 
-		Ray ray = Camera.main.ViewportPointToRay (new Vector3 (.5f, .5f, 0));
-		RaycastHit hit;
+
 
 
 		if (Physics.Raycast (ray, out hit)) {
+			// Collisions
 			if (hit.collider.tag.Contains ("ArenaDelimiter")) { 
 				if (hit.distance <= 16) {
 					Debug.Log ("Hit");
@@ -54,18 +67,14 @@ public class Autofly : MonoBehaviour {
 					if (hit.collider.GetComponent<Rigidbody> () != null) {
 						hit.rigidbody.AddForce (Vector3.forward * 1000);
 					}
-					//gameObject.rigidbody.velocity * = -1;
-
 					flying = false;
-					Debug.Log ("flying=false");
-					//gameObject.GetComponent<Rigidbody> ().AddForce (Vector3.back * -8000);
-					Debug.Log ("Knockback");
-					//gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-				} 
-				else {
+				} else {
 					flying = true;
 				}
 			} 
+			else if (hit.collider.tag.Contains ("MagicHoop") && (gameManager.gameMode == GameMode.Hoop)) {
+				transform.position = Vector3.MoveTowards (transform.position, hoops [0].transform.position, speed * Time.deltaTime);
+			}
 			else {
 				flying = true;
 			}
