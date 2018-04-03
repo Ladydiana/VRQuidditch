@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GameMode {Hoop, Snitch, FreeRoam};
+public enum GameMode {Hoop, Snitch, FreeRoam, Survival};
 
 public class GameManager : MonoBehaviour {
 
@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour {
 		}
 
 		// if not in Hoop mode don't spawn hoops
-		if (gameMode != GameMode.Hoop) {
+		if (gameMode != GameMode.Hoop && gameMode != GameMode.Survival) {
 			GameObject.FindGameObjectWithTag ("Spawner").SetActive (false);
 		}
 	}
