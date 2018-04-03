@@ -7,6 +7,7 @@ TagManager:
   - ArenaDelimiter
   - MagicHoop
   - GameManager
+  - Snitch
   layers:
   - Default
   - TransparentFX
