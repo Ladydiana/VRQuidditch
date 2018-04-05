@@ -29,4 +29,8 @@ public class GameManager : MonoBehaviour {
 	public void incrementScore() {
 		score++;
 	}
+
+	public void printScore() {
+		Debug.Log("Score: " + score);
+	}
 }

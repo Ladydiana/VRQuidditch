@@ -13,7 +13,7 @@ public class PickupLogic : MonoBehaviour {
 	}
 
 	void OnTriggerEnter (Collider other) {
-		Debug.Log ("Trigger collision detected");
+		//Debug.Log ("Trigger collision detected");
 		if (other.gameObject.tag == "Player") {
 			//Debug.Log ("Pickup.");
 
@@ -21,9 +21,13 @@ public class PickupLogic : MonoBehaviour {
 				AudioSource.PlayClipAtPoint (destroyAudioSource, transform.position);
 			}
 
+			//gameManager.incrementScore ();
+			//gameManager.printScore ();
+
 			// if survival mode increment score
 			if (gameManager.gameMode == GameMode.Survival) {
 				gameManager.incrementScore ();
+				gameManager.printScore ();
 			}
 
 			Destroy (gameObject);

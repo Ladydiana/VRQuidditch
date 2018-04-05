@@ -27137,9 +27137,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPrefab: {fileID: 1246902094812824, guid: 5caa533fda0a85b4fb192efc739f6dfd,
     type: 2}
-  gameManager: {fileID: 1057782226}
-  minSecondsBetweenSpawning: 3
-  maxSecondsBetweenSpawning: 6
+  spawnPoints:
+  - {fileID: 1727980189}
+  - {fileID: 1313848311}
+  - {fileID: 138141257}
+  - {fileID: 1167979171}
+  - {fileID: 475433466}
+  - {fileID: 1270984303}
+  - {fileID: 1981251478}
+  - {fileID: 1082335801}
+  - {fileID: 1886709395}
+  - {fileID: 1661721631}
+  - {fileID: 1469855688}
+  - {fileID: 1659520425}
   deltaX: 700
   deltaY: 250
   deltaZ: 200

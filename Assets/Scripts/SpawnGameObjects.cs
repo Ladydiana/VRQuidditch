@@ -4,7 +4,6 @@ using System.Collections;
 
 /* Description: Spawns a given prefab.
  * Run Type: continuous
- * Time: Random time ranging from minSecondsBetweenSpawning to maxSecondsBetweenSpawning
  * Location: Random location between (x +- deltaX, y +- deltaY, z +- deltaZ )
  */
 
@@ -12,38 +11,42 @@ using System.Collections;
 public class SpawnGameObjects : MonoBehaviour {
 
 	public GameObject spawnPrefab;
-    public GameManager gameManager;
-
-
-	public float minSecondsBetweenSpawning = 3.0f;
-	public float maxSecondsBetweenSpawning = 6.0f;
+	public GameObject[] spawnPoints;
 
 	public float deltaX = 0;
 	public float deltaY = 0;
 	public float deltaZ = 0;
-	
-//	private float savedTime;
-//	private float secondsBetweenSpawning;
+
+	private GameManager gameManager;
+	private short nextSpawn;
+
 
 	// Use this for initialization
 	void Start () {
-//		savedTime = 0;
-//        secondsBetweenSpawning = 0;
+		gameManager = GameObject.FindGameObjectWithTag ("GameManager").GetComponent<GameManager> ();
+		nextSpawn = 1;
     }
 	
 	// Update is called once per frame
 	void Update () {
-		if (gameManager.gameMode == GameMode.Hoop || gameManager.gameMode == GameMode.FreeRoam) {
-			//if ((Time.time - savedTime >= secondsBetweenSpawning) && (GameObject.FindGameObjectWithTag ("MagicHoop") == false)) { // is it time to spawn again?
+		if (gameManager.gameMode == GameMode.FreeRoam || gameManager.gameMode == GameMode.Survival) {
 			if (GameObject.FindGameObjectWithTag ("MagicHoop") == false) {
-				MakeThingToSpawn ();
-				//savedTime = Time.time; // store for next spawn
-				//secondsBetweenSpawning = Random.Range (minSecondsBetweenSpawning, maxSecondsBetweenSpawning);
+				MakeThingToSpawnRandom ();
 			}	
+		}
+
+		if (gameManager.gameMode == GameMode.Hoop) {
+			if (GameObject.FindGameObjectWithTag ("MagicHoop") == false) {
+				MakeThingToSpawnAtPos (spawnPoints[nextSpawn].transform.position);
+				nextSpawn++;
+				if (nextSpawn >= spawnPoints.Length) {
+					nextSpawn = 0;
+				}
+			}
 		}
 	}
 
-	void MakeThingToSpawn() {
+	void MakeThingToSpawnRandom() {
         if (gameManager.gameStarted) {
             // create spawn position
             Vector3 spawnPos = new Vector3(	Random.Range(transform.position.x - deltaX, transform.position.x + deltaX),
@@ -54,4 +57,10 @@ public class SpawnGameObjects : MonoBehaviour {
             GameObject clone = Instantiate(spawnPrefab, spawnPos, transform.rotation) as GameObject;
         }
     }
+
+	void MakeThingToSpawnAtPos(Vector3 spawnPos) {
+		if (gameManager.gameStarted) {
+			GameObject clone = Instantiate(spawnPrefab, spawnPos, transform.rotation) as GameObject;
+		}
+	}
 }
