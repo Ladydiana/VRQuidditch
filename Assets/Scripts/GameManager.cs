@@ -8,10 +8,12 @@ public class GameManager : MonoBehaviour {
 
 	public bool gameStarted = false;
 	public GameMode gameMode = GameMode.FreeRoam;
+	public static int score;
 
 	// Use this for initialization
 	void Start () {
 		gameStarted = true;
+		score = 0;
 
 		// if not in Snitch Mode deactivate Snitch
 		if (gameMode != GameMode.Snitch) {
@@ -24,8 +26,7 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+	public void incrementScore() {
+		score++;
 	}
 }
