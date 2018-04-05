@@ -21,6 +21,7 @@ public class PickupLogic : MonoBehaviour {
 				AudioSource.PlayClipAtPoint (destroyAudioSource, transform.position);
 			}
 
+			// if survival mode increment score
 			if (gameManager.gameMode == GameMode.Survival) {
 				gameManager.incrementScore ();
 			}

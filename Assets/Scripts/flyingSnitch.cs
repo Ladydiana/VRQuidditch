@@ -41,4 +41,10 @@ public class flyingSnitch : MonoBehaviour {
 			transform.position = Vector3.MoveTowards (transform.position, checkpointPoints [nextCheckpoint].transform.position, snitchSpeed * Time.deltaTime);
 		}
 	}
+
+	public void catchSnitch() {
+		Debug.Log ("Got the snitch!");
+
+		Destroy (gameObject);
+	}
 }
