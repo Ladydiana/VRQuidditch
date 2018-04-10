@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: c9be0503de58b6f41ac07539f9edb8b6
+timeCreated: 1523371804
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 350
+  forceTextureCase: -1
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Haarlem Sans
+  fontNames:
+  - Haarlem Sans
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9fa5e5c24038f454aadec282234df8aa, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
