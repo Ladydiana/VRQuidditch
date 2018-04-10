@@ -9,6 +9,7 @@ TagManager:
   - GameManager
   - Snitch
   - Spawner
+  - ScoreCanvas
   layers:
   - Default
   - TransparentFX
