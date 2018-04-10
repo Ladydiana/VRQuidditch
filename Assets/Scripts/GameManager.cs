@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum GameMode {Hoop, Snitch, FreeRoam, Survival};
 
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour {
 	public bool gameStarted = false;
 	public GameMode gameMode = GameMode.FreeRoam;
 	public static int score;
+	private const string scoreText= "SCORE: "; 
 
 	// Use this for initialization
 	void Start () {
@@ -24,10 +26,14 @@ public class GameManager : MonoBehaviour {
 		if (gameMode != GameMode.Hoop && gameMode != GameMode.Survival) {
 			GameObject.FindGameObjectWithTag ("Spawner").SetActive (false);
 		}
+
+		GameObject.FindGameObjectWithTag("MainCamera").GetComponentInChildren<Text>().text = scoreText + score.ToString();
 	}
+		
 	
 	public void incrementScore() {
 		score++;
+		GameObject.FindGameObjectWithTag("MainCamera").GetComponentInChildren<Text>().text = scoreText + score.ToString();
 	}
 
 	public void printScore() {
