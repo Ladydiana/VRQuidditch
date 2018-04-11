@@ -26,6 +26,12 @@ public class Autofly : MonoBehaviour {
 		Ray ray = Camera.main.ViewportPointToRay (new Vector3 (.5f, .5f, 0));
 		RaycastHit hit;
 
+		/*
+		 * 	STATIC MODE
+		 */
+		if (gameManager.gameMode == GameMode.Static) {
+			//do nothing
+		}
 
 		/*
 		 * 	FREEROAM MODE
