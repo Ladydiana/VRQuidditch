@@ -26863,6 +26863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 150
   flying: 1
+  looksAtHoop: 0
 --- !u!135 &1236567864
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -44460,7 +44461,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 166062, guid: 8ace1a40dd5b7734282c06470dee5be6, type: 2}
       propertyPath: m_TagString
-      value: Player
+      value: Broom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ace1a40dd5b7734282c06470dee5be6, type: 2}
