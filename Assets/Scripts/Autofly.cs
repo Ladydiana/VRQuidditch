@@ -26,28 +26,46 @@ public class Autofly : MonoBehaviour {
 		Ray ray = Camera.main.ViewportPointToRay (new Vector3 (.5f, .5f, 0));
 		RaycastHit hit;
 
+		if (gameManager.gameStarted == false) {
+			flying = false;
+		} 
+		else {
+			flying = true;
+		}
+
+		//Debug.Log (flying);
+		//Debug.Log (gameManager.gameMode);
+
 		/*
 		 * 	STATIC MODE
+		 * - don't move -
 		 */
-		if (gameManager.gameMode == GameMode.Static) {
+		if (gameManager.gameMode == GameMode.Static || gameManager.gameStarted == false) {
 			//do nothing
 		}
 
 		/*
-		 * 	FREEROAM MODE
+		 * 	FREEROAM MODE or SNITCH MODE
+		 * - free flying - 
 		 */
-		if (flying && (gameManager.gameMode == GameMode.FreeRoam ||
+		else if (flying && (gameManager.gameMode == GameMode.FreeRoam ||
 		    gameManager.gameMode == GameMode.Snitch)) {
+			Debug.Log (flying);
+			Debug.Log (gameManager.gameMode);
 			transform.Translate (Camera.main.transform.forward * speed * Time.deltaTime);
 		} 
 
 		/*
 		 * HOOP MODE
+		 * - automated move to the next hoop - 
 		 */
 		else if (flying && (gameManager.gameMode == GameMode.Hoop)) {
+			Debug.Log (flying);
+			Debug.Log (gameManager.gameMode);
+
 			hoops = GameObject.FindGameObjectsWithTag ("MagicHoop");
 
-			//move towards the next hoop if it exists
+			//change rotation towards the next hoop if it exists
 			if (hoops.Length > 0) {
 				if (!(Quaternion.LookRotation (hoops [0].transform.position - transform.position).eulerAngles.Equals (Vector3.zero)) && !looksAtHoop) {
 					transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (hoops [0].transform.position - transform.position), Time.deltaTime * 4);
@@ -60,12 +78,15 @@ public class Autofly : MonoBehaviour {
 		}
 
 
-
+		/*
+		 * COLLISIONS
+		 * - with hoops or walls -
+		 */ 
 
 		if (Physics.Raycast (ray, out hit)) {
 			looksAtHoop = false;
 
-			// Collisions
+			// Collisions with walls tagged Arena Delimiter
 			if (hit.collider.tag.Contains ("ArenaDelimiter") && (gameManager.gameMode != GameMode.Hoop)) { 
 				if (hit.distance <= 16) {
 					Debug.Log ("Hit");
@@ -77,6 +98,8 @@ public class Autofly : MonoBehaviour {
 					flying = true;
 				}
 			} 
+			// Ray collisions with hoops
+			// HOOP MODE part 2 -> translation
 			else if (hit.collider.tag.Contains ("MagicHoop") && (gameManager.gameMode == GameMode.Hoop)) {
 				looksAtHoop = true;
 				transform.position = Vector3.MoveTowards (transform.position, hoops [0].transform.position, speed * Time.deltaTime);

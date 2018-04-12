@@ -26,7 +26,7 @@ public class PickupLogic : MonoBehaviour {
 
 			// if survival mode increment score
 			if (gameManager.gameMode == GameMode.Survival || gameManager.gameMode == GameMode.Hoop) {
-				gameManager.incrementScore ();
+				gameManager.incrementScore (10);
 				gameManager.printScore ();
 			}
 

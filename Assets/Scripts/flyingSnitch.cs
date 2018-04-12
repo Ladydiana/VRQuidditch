@@ -23,7 +23,8 @@ public class flyingSnitch : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (gameManager.gameMode == GameMode.Snitch) {
+		// Snitch movement
+		if (gameManager.gameMode == GameMode.Snitch && gameManager.gameStarted) {
 			if (transform.position == checkpointPoints [nextCheckpoint].transform.position) {
 				nextCheckpoint++;
 				lastCheckpoint++;
@@ -44,7 +45,10 @@ public class flyingSnitch : MonoBehaviour {
 
 	public void catchSnitch() {
 		Debug.Log ("Got the snitch!");
+		gameManager.incrementScore (150);
+		gameManager.printScore ();
 
 		Destroy (gameObject);
 	}
+
 }
