@@ -13,7 +13,7 @@ public class Autofly : MonoBehaviour {
 	public bool flying = true;
 	private GameManager gameManager;
 	private GameObject[] hoops;
-	private bool looksAtHoop = false;
+	public bool looksAtHoop = false;
 
 
 	void Start () {
@@ -50,8 +50,6 @@ public class Autofly : MonoBehaviour {
 		 */
 		else if (flying && (gameManager.gameMode == GameMode.FreeRoam ||
 		    gameManager.gameMode == GameMode.Snitch)) {
-			Debug.Log (flying);
-			Debug.Log (gameManager.gameMode);
 			transform.Translate (Camera.main.transform.forward * speed * Time.deltaTime);
 		} 
 
@@ -60,8 +58,10 @@ public class Autofly : MonoBehaviour {
 		 * - automated move to the next hoop - 
 		 */
 		else if (flying && (gameManager.gameMode == GameMode.Hoop)) {
-			Debug.Log (flying);
-			Debug.Log (gameManager.gameMode);
+			//Debug.Log (flying);
+			//Debug.Log (gameManager.gameMode);
+
+			//UnityEngine.XR.XRDevice.DisableAutoXRCameraTracking (GetComponent<Camera>(), true);
 
 			hoops = GameObject.FindGameObjectsWithTag ("MagicHoop");
 
@@ -84,7 +84,10 @@ public class Autofly : MonoBehaviour {
 		 */ 
 
 		if (Physics.Raycast (ray, out hit)) {
-			looksAtHoop = false;
+
+			if (hit.collider.tag.Contains ("MagicHoop")) {
+				looksAtHoop = true;
+			}
 
 			// Collisions with walls tagged Arena Delimiter
 			if (hit.collider.tag.Contains ("ArenaDelimiter") && (gameManager.gameMode != GameMode.Hoop)) { 
@@ -100,8 +103,8 @@ public class Autofly : MonoBehaviour {
 			} 
 			// Ray collisions with hoops
 			// HOOP MODE part 2 -> translation
-			else if (hit.collider.tag.Contains ("MagicHoop") && (gameManager.gameMode == GameMode.Hoop)) {
-				looksAtHoop = true;
+
+			else if (looksAtHoop==true && (gameManager.gameMode == GameMode.Hoop) && hoops.Length > 0) {
 				transform.position = Vector3.MoveTowards (transform.position, hoops [0].transform.position, speed * Time.deltaTime);
 			}
 			else {

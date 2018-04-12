@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.VR;
 
 public enum GameMode {Static, Hoop, Snitch, FreeRoam, Survival};
 
@@ -89,6 +90,8 @@ public class GameManager : MonoBehaviour {
 			break;
 		case "HOOP":
 			Debug.Log ("Hoop");
+			//UnityEngine.XR.XRDevice.DisableAutoXRCameraTracking (Camera.main, true);
+			//VRDevice.DisableAutoVRCameraTracking(Camera.main, Disabled); 
 			gameMode = GameMode.Hoop;
 			gameStarted = true;
 			break;

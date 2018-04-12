@@ -13,18 +13,23 @@ public class SpawnGameObjects : MonoBehaviour {
 	public GameObject spawnPrefab;
 	public GameObject[] spawnPoints;
 
+
 	public float deltaX = 0;
 	public float deltaY = 0;
 	public float deltaZ = 0;
 
 	private GameManager gameManager;
+	private GameObject mainCamera;
 	private short nextSpawn;
-
+	private GameObject player;
+	private Autofly autofly;
 
 	// Use this for initialization
 	void Start () {
 		gameManager = GameObject.FindGameObjectWithTag ("GameManager").GetComponent<GameManager> ();
 		nextSpawn = 1;
+		player = GameObject.FindGameObjectWithTag ("Player");
+		autofly = GameObject.FindObjectOfType(typeof(Autofly)) as Autofly;
     }
 	
 	// Update is called once per frame
@@ -60,6 +65,9 @@ public class SpawnGameObjects : MonoBehaviour {
 
 	void MakeThingToSpawnAtPos(Vector3 spawnPos) {
 		if (gameManager.gameStarted) {
+			if (player.GetComponent<Autofly> () == null)
+				Debug.Log ("Null autofly");
+			autofly.looksAtHoop = false;
 			GameObject clone = Instantiate(spawnPrefab, spawnPos, transform.rotation) as GameObject;
 		}
 	}
