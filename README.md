@@ -30,7 +30,7 @@ Fan-Made Cardboard experience of the Harry Potter Quidditch game.
 - [ ] Add Win Game functionality
 - [ ] Find a prettier Hogwarts
 - [ ] Add commentator voice
-- [ ] Optoinal: Add other NPC players
+- [ ] Optional: Add other NPC players
 - [ ] Optional: Select the theme you're playing as and render accordingly.
 - [ ] Publish Game
 
