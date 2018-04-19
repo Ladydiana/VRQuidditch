@@ -12,6 +12,7 @@ TagManager:
   - ScoreCanvas
   - MainMenuCanvas
   - Broom
+  - StartingCanvas
   layers:
   - Default
   - TransparentFX

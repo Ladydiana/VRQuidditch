@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour {
 	public GameMode gameMode = GameMode.Static;
 	public static int score;
 	private const string scoreText= "SCORE: "; 
-	private GameObject scoreCanvas, mainMenuCanvas;
+	private GameObject scoreCanvas, mainMenuCanvas, startingCanvas;
 	private GameObject mainCamera, snitch, spawner;
 
 	// Use this for initialization
@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour {
 		mainCamera = GameObject.FindGameObjectWithTag ("MainCamera");
 		snitch = GameObject.FindGameObjectWithTag ("Snitch");
 		spawner = GameObject.FindGameObjectWithTag ("Spawner");
+		startingCanvas = GameObject.FindGameObjectWithTag ("StartingCanvas");
 
 		gameStartedCheck ();
 
@@ -111,5 +112,24 @@ public class GameManager : MonoBehaviour {
 		checkModesCheck ();
 		score = 0;
 
+	}
+
+	IEnumerator startingGame() {
+
+
+		yield return WaitForSeconds (1);
+
+		Text text = startingCanvas.GetComponent<Text> ();
+		text = "3";
+
+		yield return WaitForSeconds (1);
+
+		text = "2";
+
+		yield return WaitForSeconds (1);
+
+		text = "1";
+
+		yield return WaitForSeconds (1);
 	}
 }
